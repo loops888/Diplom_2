@@ -17,10 +17,12 @@ def generate_random_hex_24():
 
 @allure.step('Генерируем данные для регистрации пользователя.')
 def generate_info_for_registration():
-    email = faker.email()
-    password = faker.password()
-    name = faker.name()
-    return email, password, name
+    info = {
+        'email': faker.email(),
+        'password': faker.password(),
+        'name': faker.name()
+    }
+    return info
 
 
 @allure.step('Отправляем запрос на регистрацию пользователя.')
